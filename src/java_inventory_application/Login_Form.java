@@ -17,6 +17,7 @@ public class Login_Form extends javax.swing.JFrame {
 
     
     public Login_Form() {
+        super("Авторизация");
         initComponents();
         
         setLocationRelativeTo(null);
@@ -152,7 +153,7 @@ public class Login_Form extends javax.swing.JFrame {
                 
                 if(rs.getString("user_type").equals("user"))
                 {
-                    homeForm.jMenu5_USER_.setVisible(false); // отключаем возможность администрирования обычному пользователю 
+                    //homeForm.jMenu5_USER_.setVisible(false); // отключаем возможность администрирования обычному пользователю 
                     homeForm.jButton_Users.setVisible(false);
                 }
                 

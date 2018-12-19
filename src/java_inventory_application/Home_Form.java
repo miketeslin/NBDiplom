@@ -11,10 +11,9 @@ public class Home_Form extends javax.swing.JFrame {
      */
     
     public Home_Form() {
+        super("АРМ сотрудника отдела продаж");
         initComponents();
-
-        ImageIcon imgThisImg = new ImageIcon("src\\images\\my_store.png");
-
+        //ImageIcon imgThisImg = new ImageIcon("src\\images\\my_store.png");  
         //jLabel_BackgroundImage.setIcon(imgThisImg);
 
       
@@ -31,216 +30,158 @@ public class Home_Form extends javax.swing.JFrame {
         jButton_Customers = new javax.swing.JButton();
         jButton_Orders = new javax.swing.JButton();
         jButton_Categories = new javax.swing.JButton();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu_PRODUCT_ = new javax.swing.JMenu();
-        jMenu_CUSTOMER_ = new javax.swing.JMenu();
-        jMenu_ORDER_ = new javax.swing.JMenu();
-        jMenu_CATEGORY_ = new javax.swing.JMenu();
-        jMenu5_USER_ = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        jButton_Users.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon_users.png"))); // NOI18N
         jButton_Users.setText("Пользователи");
+        jButton_Users.setBorder(new javax.swing.border.MatteBorder(null));
+        jButton_Users.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton_UsersMouseClicked(evt);
+            }
+        });
 
+        jButton_Products.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon_products.png"))); // NOI18N
         jButton_Products.setText("Товары");
+        jButton_Products.setBorder(new javax.swing.border.MatteBorder(null));
         jButton_Products.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton_ProductsMouseClicked(evt);
             }
         });
+        jButton_Products.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_ProductsActionPerformed(evt);
+            }
+        });
 
+        jButton_Customers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon_clients.png"))); // NOI18N
         jButton_Customers.setText("Клиенты");
+        jButton_Customers.setBorder(new javax.swing.border.MatteBorder(null));
+        jButton_Customers.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton_CustomersMouseClicked(evt);
+            }
+        });
 
-        jButton_Orders.setText("Добавить заказ");
+        jButton_Orders.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon_order.png"))); // NOI18N
+        jButton_Orders.setText("Заказы");
+        jButton_Orders.setBorder(new javax.swing.border.MatteBorder(null));
+        jButton_Orders.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton_OrdersMouseClicked(evt);
+            }
+        });
 
+        jButton_Categories.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon_category.png"))); // NOI18N
         jButton_Categories.setText("Категории");
+        jButton_Categories.setBorder(new javax.swing.border.MatteBorder(null));
+        jButton_Categories.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton_CategoriesMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton_Customers, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
+                    .addComponent(jButton_Products, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton_Orders)
+                    .addComponent(jButton_Categories, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(50, 50, 50))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(85, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton_Categories, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton_Orders, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton_Products, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton_Customers, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton_Users, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(83, 83, 83))
+                .addContainerGap(160, Short.MAX_VALUE)
+                .addComponent(jButton_Users, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(160, 160, 160))
         );
+
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButton_Categories, jButton_Customers, jButton_Orders, jButton_Products, jButton_Users});
+
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jButton_Products, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(jButton_Customers, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(jButton_Orders, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addComponent(jButton_Categories, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addGap(50, 50, 50)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton_Products, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton_Categories, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(50, 50, 50)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton_Customers, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton_Orders, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                 .addComponent(jButton_Users, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25))
+                .addGap(50, 50, 50))
         );
 
-        jMenu_PRODUCT_.setBackground(new java.awt.Color(249, 105, 14));
-        jMenu_PRODUCT_.setForeground(new java.awt.Color(255, 255, 255));
-        jMenu_PRODUCT_.setText("  PRODUCT  |");
-        jMenu_PRODUCT_.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenu_PRODUCT_.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        jMenu_PRODUCT_.setOpaque(true);
-        jMenu_PRODUCT_.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu_PRODUCT_MouseClicked(evt);
-            }
-        });
-        jMenu_PRODUCT_.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu_PRODUCT_ActionPerformed(evt);
-            }
-        });
-        jMenuBar1.add(jMenu_PRODUCT_);
-
-        jMenu_CUSTOMER_.setBackground(new java.awt.Color(249, 105, 14));
-        jMenu_CUSTOMER_.setForeground(new java.awt.Color(255, 255, 255));
-        jMenu_CUSTOMER_.setText("  CUSTOMER  |");
-        jMenu_CUSTOMER_.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenu_CUSTOMER_.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        jMenu_CUSTOMER_.setOpaque(true);
-        jMenu_CUSTOMER_.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu_CUSTOMER_MouseClicked(evt);
-            }
-        });
-        jMenuBar1.add(jMenu_CUSTOMER_);
-
-        jMenu_ORDER_.setBackground(new java.awt.Color(249, 105, 14));
-        jMenu_ORDER_.setForeground(new java.awt.Color(255, 255, 255));
-        jMenu_ORDER_.setText("  ORDER  |");
-        jMenu_ORDER_.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenu_ORDER_.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        jMenu_ORDER_.setOpaque(true);
-        jMenu_ORDER_.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu_ORDER_MouseClicked(evt);
-            }
-        });
-        jMenuBar1.add(jMenu_ORDER_);
-
-        jMenu_CATEGORY_.setBackground(new java.awt.Color(249, 105, 14));
-        jMenu_CATEGORY_.setForeground(new java.awt.Color(255, 255, 255));
-        jMenu_CATEGORY_.setText("  CATEGORY  |");
-        jMenu_CATEGORY_.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenu_CATEGORY_.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        jMenu_CATEGORY_.setOpaque(true);
-        jMenu_CATEGORY_.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu_CATEGORY_MouseClicked(evt);
-            }
-        });
-        jMenuBar1.add(jMenu_CATEGORY_);
-
-        jMenu5_USER_.setBackground(new java.awt.Color(249, 105, 14));
-        jMenu5_USER_.setForeground(new java.awt.Color(255, 255, 255));
-        jMenu5_USER_.setText("  USER  ");
-        jMenu5_USER_.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenu5_USER_.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        jMenu5_USER_.setOpaque(true);
-        jMenu5_USER_.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu5_USER_MouseClicked(evt);
-            }
-        });
-        jMenuBar1.add(jMenu5_USER_);
-
-        setJMenuBar(jMenuBar1);
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jButton_Categories, jButton_Customers, jButton_Orders, jButton_Products, jButton_Users});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(673, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(103, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenu_PRODUCT_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_PRODUCT_ActionPerformed
-        
-    }//GEN-LAST:event_jMenu_PRODUCT_ActionPerformed
-
-    // open the product form
-    private void jMenu_PRODUCT_MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu_PRODUCT_MouseClicked
-        
-                MANAGE_PRODUCTS_FORM productForm = new MANAGE_PRODUCTS_FORM();
+    private void jButton_ProductsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_ProductsMouseClicked
+        MANAGE_PRODUCTS_FORM productForm = new MANAGE_PRODUCTS_FORM();
                 productForm.pack();
                 productForm.setVisible(true);
                 productForm.setLocationRelativeTo(null);
                 productForm.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        
-    }//GEN-LAST:event_jMenu_PRODUCT_MouseClicked
+    }//GEN-LAST:event_jButton_ProductsMouseClicked
 
-    // open the category form
-    private void jMenu_CATEGORY_MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu_CATEGORY_MouseClicked
-        
+    private void jButton_ProductsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_ProductsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton_ProductsActionPerformed
+
+    private void jButton_CustomersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_CustomersMouseClicked
+MANAGE_CUSTOMERS_FORM customerForm = new MANAGE_CUSTOMERS_FORM();
+                customerForm.pack();
+                customerForm.setVisible(true);
+                customerForm.setLocationRelativeTo(null);
+                customerForm.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    }//GEN-LAST:event_jButton_CustomersMouseClicked
+
+    private void jButton_OrdersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_OrdersMouseClicked
+       MANAGE_ORDERS_FORM orderForm = new MANAGE_ORDERS_FORM();
+                orderForm.pack();
+                orderForm.setVisible(true);
+                orderForm.setLocationRelativeTo(null);
+                orderForm.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    }//GEN-LAST:event_jButton_OrdersMouseClicked
+
+    private void jButton_CategoriesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_CategoriesMouseClicked
         MANAGE_CATEGORIES_FORM categoryForm = new MANAGE_CATEGORIES_FORM();
                 categoryForm.pack();
                 categoryForm.setVisible(true);
                 categoryForm.setLocationRelativeTo(null);
                 categoryForm.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        
-    }//GEN-LAST:event_jMenu_CATEGORY_MouseClicked
+    }//GEN-LAST:event_jButton_CategoriesMouseClicked
 
-    // open the customer form
-    private void jMenu_CUSTOMER_MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu_CUSTOMER_MouseClicked
-       
-        MANAGE_CUSTOMERS_FORM customerForm = new MANAGE_CUSTOMERS_FORM();
-                customerForm.pack();
-                customerForm.setVisible(true);
-                customerForm.setLocationRelativeTo(null);
-                customerForm.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        
-    }//GEN-LAST:event_jMenu_CUSTOMER_MouseClicked
-
-    // open the order form
-    private void jMenu_ORDER_MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu_ORDER_MouseClicked
-        
-        MANAGE_ORDERS_FORM orderForm = new MANAGE_ORDERS_FORM();
-                orderForm.pack();
-                orderForm.setVisible(true);
-                orderForm.setLocationRelativeTo(null);
-                orderForm.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        
-    }//GEN-LAST:event_jMenu_ORDER_MouseClicked
-
-    // open the user form
-    private void jMenu5_USER_MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu5_USER_MouseClicked
-        
+    private void jButton_UsersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_UsersMouseClicked
         MANAGE_USERS_FORM userForm = new MANAGE_USERS_FORM();
                 userForm.pack();
                 userForm.setVisible(true);
                 userForm.setLocationRelativeTo(null);
                 userForm.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        
-    }//GEN-LAST:event_jMenu5_USER_MouseClicked
-
-    private void jButton_ProductsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_ProductsMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton_ProductsMouseClicked
+    }//GEN-LAST:event_jButton_UsersMouseClicked
 
     /**
      * @param args the command line arguments
@@ -273,7 +214,8 @@ public class Home_Form extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Home_Form().setVisible(true);
-            }
+                
+                        }
         });
     }
 
@@ -283,12 +225,6 @@ public class Home_Form extends javax.swing.JFrame {
     private javax.swing.JButton jButton_Orders;
     private javax.swing.JButton jButton_Products;
     public javax.swing.JButton jButton_Users;
-    public javax.swing.JMenu jMenu5_USER_;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenu jMenu_CATEGORY_;
-    private javax.swing.JMenu jMenu_CUSTOMER_;
-    private javax.swing.JMenu jMenu_ORDER_;
-    private javax.swing.JMenu jMenu_PRODUCT_;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
