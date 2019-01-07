@@ -9,11 +9,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author 1BestCsharp
- */
-
 
 public class Product {
 
@@ -62,11 +57,10 @@ public class Product {
             ps.setString(6, product.getDescription());
 
             if(ps.executeUpdate() != 0){
-                JOptionPane.showMessageDialog(null, "New Product Added");
-                
+                JOptionPane.showMessageDialog(null, "Новый товар добавлен в каталог!", "Сообщение",1);
                 }
                 else{
-                    JOptionPane.showMessageDialog(null, "Something Wrong");
+                    JOptionPane.showMessageDialog(null, "Что-то пошло не так...");
                     
                 }
             

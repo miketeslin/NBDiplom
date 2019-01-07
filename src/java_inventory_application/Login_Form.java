@@ -153,22 +153,24 @@ public class Login_Form extends javax.swing.JFrame {
                 
                 if(rs.getString("user_type").equals("user"))
                 {
-                    //homeForm.jMenu5_USER_.setVisible(false); // отключаем возможность администрирования обычному пользователю 
+                    
                     homeForm.jButton_Users.setVisible(false);
+                    homeForm.jLabel1.setText("Автор: "+jTextField_Username.getText());
+                    this.dispose();
                 }
-                
                 homeForm.pack();
                 homeForm.setExtendedState(homeForm.getExtendedState() | JFrame.NORMAL);
-                Dimension r = homeForm.getBounds().getSize();
-                //homeForm.jLabel_BackgroundImage.setPreferredSize(r);
+                homeForm.setTitle("АРМ сотрудника отдела продаж");
+                //Dimension r = homeForm.getBounds().getSize();               
+                homeForm.setSize(476, 427);
                 homeForm.setVisible(true);
-                
                 homeForm.setLocationRelativeTo(null);
                 homeForm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                
+                homeForm.jLabel1.setText("Режим администратора. Пользователь: "+jTextField_Username.getText());
                 this.dispose();
-
-            }else{
+                             
+            }
+            else{
                 JOptionPane.showMessageDialog(null, "Неверный логин или пароль","Ошибка авторизации",2);
             }
             

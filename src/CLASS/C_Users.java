@@ -9,7 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-//Класс пользователи
+//Класс таблицы users   
 public class C_Users {
 
     Connection connection;

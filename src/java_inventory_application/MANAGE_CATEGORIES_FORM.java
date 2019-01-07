@@ -58,7 +58,7 @@ public class MANAGE_CATEGORIES_FORM extends javax.swing.JFrame {
     public void populateJtable(){
         
         ArrayList<CLASS.Category> CategoryList = category.categoriesList();
-        
+                
         String[] colNames = {"Id","Name"};
         Object[][] rows = new Object[CategoryList.size()][2];
         DefaultTableModel model = (DefaultTableModel) jTable_CATEGORIES_.getModel();

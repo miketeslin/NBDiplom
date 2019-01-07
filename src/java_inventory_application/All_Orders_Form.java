@@ -1,7 +1,7 @@
 package java_inventory_application;
 
 
-import CLASS.THE_ORDER;
+import CLASS.Order;
 import java.awt.Color;
 import java.awt.Font;
 import java.io.BufferedWriter;
@@ -55,8 +55,8 @@ public class All_Orders_Form extends javax.swing.JFrame {
     
     public void populateOrderJtable(){
         
-        CLASS.THE_ORDER ord = new CLASS.THE_ORDER();
-        ArrayList<CLASS.THE_ORDER> OrderList = ord.ordersList();
+        CLASS.Order ord = new CLASS.Order();
+        ArrayList<CLASS.Order> OrderList = ord.ordersList();
         
         String[] colNames = {"Id","Date","Customer"};
         Object[][] rows = new Object[OrderList.size()][3];
@@ -216,7 +216,7 @@ public class All_Orders_Form extends javax.swing.JFrame {
                   }
                   
                    bw.write(System.lineSeparator());
-                   bw.write("ORDER TOTAL AMOUNT : " + CLASS.THE_ORDER.getOrderTotalAmount(Integer.valueOf(jTable_ORDERS.getValueAt(index, 0).toString())));
+                   bw.write("ORDER TOTAL AMOUNT : " + CLASS.Order.getOrderTotalAmount(Integer.valueOf(jTable_ORDERS.getValueAt(index, 0).toString())));
                }
                //close BufferedWriter
                bw.close();

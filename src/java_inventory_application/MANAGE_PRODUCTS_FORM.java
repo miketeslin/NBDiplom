@@ -52,7 +52,7 @@ public class MANAGE_PRODUCTS_FORM extends javax.swing.JFrame {
         CLASS.Product prd = new CLASS.Product();
         ArrayList<CLASS.Product> ProductList = prd.productsList(val);
         
-        String[] colNames = {"Id","Name","Price","Quantity","Image","Description","Category"};
+        String[] colNames = {"Код","Наименование","Цена продажи","В наличии","Фото","Описание","Категория"};
         Object[][] rows = new Object[ProductList.size()][7];
         
         for(int i = 0; i < ProductList.size(); i++){
@@ -103,6 +103,7 @@ public class MANAGE_PRODUCTS_FORM extends javax.swing.JFrame {
         jButton_REFRESH_ = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Товары");
         setBackground(new java.awt.Color(255, 153, 153));
 
         jPanel1.setBackground(new java.awt.Color(34, 49, 63));
@@ -110,7 +111,7 @@ public class MANAGE_PRODUCTS_FORM extends javax.swing.JFrame {
         jButton_INSERT_PRODUCT_.setBackground(new java.awt.Color(30, 130, 76));
         jButton_INSERT_PRODUCT_.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jButton_INSERT_PRODUCT_.setForeground(new java.awt.Color(255, 255, 255));
-        jButton_INSERT_PRODUCT_.setText("Add New Product");
+        jButton_INSERT_PRODUCT_.setText("Добавить новый товар");
         jButton_INSERT_PRODUCT_.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_INSERT_PRODUCT_ActionPerformed(evt);
@@ -120,7 +121,7 @@ public class MANAGE_PRODUCTS_FORM extends javax.swing.JFrame {
         jButton_UPDATE_PRODUCT_.setBackground(new java.awt.Color(65, 131, 215));
         jButton_UPDATE_PRODUCT_.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jButton_UPDATE_PRODUCT_.setForeground(new java.awt.Color(255, 255, 255));
-        jButton_UPDATE_PRODUCT_.setText("Edit Selected Product");
+        jButton_UPDATE_PRODUCT_.setText("Обновить данные");
         jButton_UPDATE_PRODUCT_.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_UPDATE_PRODUCT_ActionPerformed(evt);
@@ -130,7 +131,7 @@ public class MANAGE_PRODUCTS_FORM extends javax.swing.JFrame {
         jButton_DELETE_PRODUCT_.setBackground(new java.awt.Color(246, 36, 89));
         jButton_DELETE_PRODUCT_.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jButton_DELETE_PRODUCT_.setForeground(new java.awt.Color(255, 255, 255));
-        jButton_DELETE_PRODUCT_.setText("Remove Selected Product");
+        jButton_DELETE_PRODUCT_.setText("Удалить товар");
         jButton_DELETE_PRODUCT_.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_DELETE_PRODUCT_ActionPerformed(evt);
@@ -150,7 +151,7 @@ public class MANAGE_PRODUCTS_FORM extends javax.swing.JFrame {
         jTextField_VALUE_TO_SEARCH.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         jButton_SEARCH_.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton_SEARCH_.setText("Search");
+        jButton_SEARCH_.setText("Поиск");
         jButton_SEARCH_.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_SEARCH_ActionPerformed(evt);
@@ -158,7 +159,7 @@ public class MANAGE_PRODUCTS_FORM extends javax.swing.JFrame {
         });
 
         jButton_REFRESH_.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton_REFRESH_.setText("Refresh");
+        jButton_REFRESH_.setText("Обновить");
         jButton_REFRESH_.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_REFRESH_ActionPerformed(evt);
@@ -170,20 +171,20 @@ public class MANAGE_PRODUCTS_FORM extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton_UPDATE_PRODUCT_, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton_INSERT_PRODUCT_, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton_DELETE_PRODUCT_, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton_INSERT_PRODUCT_, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton_UPDATE_PRODUCT_, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton_DELETE_PRODUCT_, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextField_VALUE_TO_SEARCH, javax.swing.GroupLayout.PREFERRED_SIZE, 590, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextField_VALUE_TO_SEARCH, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButton_SEARCH_, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton_REFRESH_, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 905, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton_REFRESH_, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 942, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -198,12 +199,13 @@ public class MANAGE_PRODUCTS_FORM extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jButton_INSERT_PRODUCT_, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(26, 26, 26)
                         .addComponent(jButton_UPDATE_PRODUCT_, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton_DELETE_PRODUCT_, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 474, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(19, Short.MAX_VALUE))
+                        .addGap(30, 30, 30)
+                        .addComponent(jButton_DELETE_PRODUCT_, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 255, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

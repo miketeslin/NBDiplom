@@ -35,7 +35,7 @@ public class MANAGE_ORDERS_FORM extends javax.swing.JFrame {
         
         jComboBox_CATEGORIES_ActionPerformed(null);
         
-        CLASS.THE_ORDER ord = new CLASS.THE_ORDER();
+        CLASS.Order ord = new CLASS.Order();
         
         // display the new order id in textfield
         try{
@@ -556,7 +556,7 @@ public class MANAGE_ORDERS_FORM extends javax.swing.JFrame {
             String total;
 
             // insert the order
-            CLASS.THE_ORDER.insertOrder(orderId, orderDate, Integer.valueOf(jTextField_CUSTOMER_ID.getText()));
+            CLASS.Order.insertOrder(orderId, orderDate, Integer.valueOf(jTextField_CUSTOMER_ID.getText()));
             
             // get the product data
                 for(int i = 0; i < jTable_PRODUCTS_IN_ORDER_.getRowCount(); i++)
@@ -567,10 +567,10 @@ public class MANAGE_ORDERS_FORM extends javax.swing.JFrame {
                     total = jTable_PRODUCTS_IN_ORDER_.getValueAt(i, 4).toString();
                   
                     // insert the order details
-                    CLASS.THE_ORDER.insertOrderDetails(productId, orderId, qty, price, total);
+                    CLASS.Order.insertOrderDetails(productId, orderId, qty, price, total);
                     
                     // display the new order id in textfield
-                        CLASS.THE_ORDER ord = new CLASS.THE_ORDER();
+                        CLASS.Order ord = new CLASS.Order();
                         jTextField_ORDER_ID.setText(String.valueOf(ord.getMaxOrderId() + 1));
                 }
                 

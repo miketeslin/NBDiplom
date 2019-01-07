@@ -398,7 +398,7 @@ public class MANAGE_CUSTOMERS_FORM extends javax.swing.JFrame {
                 jTextField_TEL.setText(jTable_CUSTOMERS_.getValueAt(rowIndex, 3).toString());
                 jTextField_EMAIL.setText(jTable_CUSTOMERS_.getValueAt(rowIndex, 4).toString());
 
-                CLASS.THE_ORDER order = new CLASS.THE_ORDER();
+                CLASS.Order order = new CLASS.Order();
                 jLabel_ORDERS_COUNT.setText(order.getCustomerOrdersCount(Integer.valueOf(jTable_CUSTOMERS_.getValueAt(rowIndex, 0).toString())));
                 jLabel_TOTAL_AMOUNT.setText(order.getCustomerOrdersTotalAmount(Integer.valueOf(jTable_CUSTOMERS_.getValueAt(rowIndex, 0).toString())));
                 jLabel_LAST_ORDER_DATE.setText(order.getCustomerLastOrderDate(Integer.valueOf(jTable_CUSTOMERS_.getValueAt(rowIndex, 0).toString())));

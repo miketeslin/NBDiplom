@@ -11,11 +11,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author 1BestCsharp
- */
-public class THE_ORDER {
+
+public class Order {
     
     Connection connection = DB_INFO.getConnection();
     
@@ -24,15 +21,15 @@ public class THE_ORDER {
     private Date orderDate;
     private Integer customerId;
     
-    public THE_ORDER(){}
+    public Order(){}
     
-    public THE_ORDER(Integer ID, Date ORDER_DATE)
+    public Order(Integer ID, Date ORDER_DATE)
     {
         this.id = ID;
         this.orderDate = ORDER_DATE;
     }
     
-    public THE_ORDER(Integer ID, Date ORDER_DATE, Integer CUSTOMER_ID)
+    public Order(Integer ID, Date ORDER_DATE, Integer CUSTOMER_ID)
     {
         this.id = ID;
         this.orderDate = ORDER_DATE;
@@ -65,9 +62,9 @@ public class THE_ORDER {
     
     
     // get the orders list
-    public ArrayList<THE_ORDER> ordersList(){
+    public ArrayList<Order> ordersList(){
         
-        ArrayList<THE_ORDER> order_list = new ArrayList<>();
+        ArrayList<Order> order_list = new ArrayList<>();
         ResultSet rs;
         PreparedStatement ps;
 
@@ -77,10 +74,10 @@ public class THE_ORDER {
             ps = connection.prepareStatement(query);
             rs = ps.executeQuery();
            
-            THE_ORDER ord;
+            Order ord;
             // Integer ID, String NAME, Integer CATEGORY_ID, String PRICE, byte[] PICTURE, Integer QUANTITY, String DESCRIPTION
             while(rs.next()){
-                ord = new THE_ORDER(rs.getInt("id"),
+                ord = new Order(rs.getInt("id"),
                                     rs.getDate("order_date"),
                                     rs.getInt("customer_id")
                                  );
@@ -89,7 +86,7 @@ public class THE_ORDER {
             }
         
         } catch (SQLException ex) {
-            Logger.getLogger(THE_ORDER.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Order.class.getName()).log(Level.SEVERE, null, ex);
         }
         return order_list;
         
@@ -118,7 +115,7 @@ public class THE_ORDER {
             
             
         } catch (SQLException ex) {
-            Logger.getLogger(THE_ORDER.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Order.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         return ordersCount;
@@ -146,7 +143,7 @@ public class THE_ORDER {
             }
             
         } catch (SQLException ex) {
-            Logger.getLogger(THE_ORDER.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Order.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         
@@ -174,7 +171,7 @@ public class THE_ORDER {
             }
             
         } catch (SQLException ex) {
-            Logger.getLogger(THE_ORDER.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Order.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         
@@ -203,7 +200,7 @@ public class THE_ORDER {
             }
             
         } catch (SQLException ex) {
-            Logger.getLogger(THE_ORDER.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Order.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         return lastOrderDate;
@@ -228,7 +225,7 @@ public class THE_ORDER {
             }
             
         } catch (SQLException ex) {
-            Logger.getLogger(THE_ORDER.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Order.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         return maxOrderId;
@@ -260,7 +257,7 @@ public class THE_ORDER {
                 }
             
         } catch (SQLException ex) {
-            Logger.getLogger(THE_ORDER.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Order.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
      
@@ -297,7 +294,7 @@ public class THE_ORDER {
                 }
             
         } catch (SQLException ex) {
-            Logger.getLogger(THE_ORDER.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Order.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
      

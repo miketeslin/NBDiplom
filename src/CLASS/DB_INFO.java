@@ -2,6 +2,7 @@ package CLASS;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 
 /**
  * @author 1BestCsharp
@@ -22,6 +23,7 @@ public class DB_INFO {
 
     private static Connection getConnection(String db_name,String user_name,String password)
     {
+        PreparedStatement ps;
         try
         {
             Class.forName("com.mysql.jdbc.Driver");
